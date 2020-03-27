@@ -1,2 +1,1 @@
-# tiwari.lata786-gmail.com
-DAA
+# Data structures and Algorithms 
