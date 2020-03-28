@@ -5,18 +5,16 @@ const N = inputArray.length;
 
 function bubbleSort() {
   let i, j, flag;
-  for(i=0; i<N; i++) { // O(N)
+  for(i=0; i<N-1; i++) { // O(N)
     flag = 0;
-    for(j=i+1; j<N; j++) { // O(N)
-      if(inputArray[j] < inputArray[i]) { // O(1)
+    for(j=0; j<N-i-1; j++) { // O(N)
+      if(inputArray[j] > inputArray[j+1]) { // O(1)
         // swapping
-        inputArray[j] = inputArray[i] + (inputArray[i]=inputArray[j], 0); // O(1)
-        /* (inputArray[i]=inputArray[min_indx], 0); will set inputArray[i] to inputArray[min_indx] and yeild 0.
-        inputArray[i] + 0 will set inputArray[min_indx] to old value of inputArray[i] */
+        inputArray[j+1] = inputArray[j] + (inputArray[j]=inputArray[j+1], 0); // O(1)
         flag  = 1;
       }
     }
-    if(flag === 0) break;
+    if(flag === 0) break; // O(1)
   }
 }
 
