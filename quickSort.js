@@ -6,26 +6,32 @@
   Sorting of left and right array
 */
 
-let a = [10, 7, 15, 25, 32, 20, 3, 12];
+let a = [100, 750, 150, 250, 230, 20, 130, 102];
 const N = a.length-1;
+let pivot = 0;
 
-function partition(array, pivot) {
-  let i, j = -1, n = array.length-1;
-  for(i=0; i<= n; i++) { // O(n)
+function partition(array, low, high) {
+  let i, j = low-1, pivot = array[high];
+  for(i=low; i<= high-1; i++) { // first to second last : O(n)
     if(array[i] <= pivot) {
       j += 1;
       array[i] = array[j] + (array[j] = array[i], 0 );
     } else continue; 
   }
+  array[j+1] = array[high] + (array[high] = array[j+1], 0 );
+  return j+1;
+}
+
+function quickSort(array, low, high) {
+  if(low<high) {
+    pivot = partition(array, low, high);
+    
+    quickSort(array, low, pivot-1); // O(n/2)
+    quickSort(array, pivot+1, high); // O(n/2)
+  }
   return array;
 }
 
-function quickSort() {
-  let pivot = a[N];
-  let _a = partition(a, pivot); 
-  let divide = _a.indexOf(pivot);
-  let leftArray = _a.slice(0, divide), rightArray = _a.slice(divide+1, N);
-  return [...partition(leftArray, leftArray[leftArray.length-1]), pivot, ...partition(rightArray, rightArray[rightArray.length-1])];
-}
+console.log('Sorted array is : ', quickSort(a, 0, N)); //O(nlogn)-O(n^2)
 
 console.log('Sorted array is : ', quickSort());
