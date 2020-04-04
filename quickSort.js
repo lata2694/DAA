@@ -33,5 +33,3 @@ function quickSort(array, low, high) {
 }
 
 console.log('Sorted array is : ', quickSort(a, 0, N)); //O(nlogn)-O(n^2)
-
-console.log('Sorted array is : ', quickSort());
