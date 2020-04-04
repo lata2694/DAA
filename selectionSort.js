@@ -1,5 +1,6 @@
 "use strict"
 
+// Find the smallest in array and put it in the right position. Array is in two parts: sorted part and unsorted part.
 let inputArray = [10, 7, 15, 25, 32, 20, 3, 12];
 const N = inputArray.length;
 

@@ -1,15 +1,15 @@
 
 "use strict"
-
+// first elment is picked as sorted, next adjacent elments are compared and kept in right position in sorted array
 let inputArray = [10, 7, 15, 25, 32, 20, 3, 12];
 const N = inputArray.length-1;
 
-function insertionSort() {
+function insertionSort() { 
   let i, j;
   for(i = 0; i<N; i++) { //O(N-1)
     if(inputArray[i] > inputArray[i+1]) { //O(1)
       j=i;
-      while(j>=0 && a[j] > a[j+1]) { //O(N-i)
+      while(j>=0 && a[j] > a[j+1])  { //O(N-i)
         a[j+1] = a[j] + (a[j]=a[j+1], 0); //O(1)
         j--; //O(1)
       }

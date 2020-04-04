@@ -1,5 +1,6 @@
 "use strict"
 
+// two adjacent elements are compared and sorted till whole array is sorted
 let inputArray = [10, 7, 15, 25, 32, 20, 3, 12];
 const N = inputArray.length;
 
