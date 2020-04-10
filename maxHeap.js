@@ -11,8 +11,6 @@ function maxHeapify(a,i) {
     largest = r;
   if(largest !== i) {
     a[largest] = a[i] + (a[i]=a[largest], 0);  
-    console.log('a = ',a);   
-    
     maxHeapify(a,largest);
   }
   
@@ -24,5 +22,5 @@ function buildMaxHeap(a) {
     maxHeapify(a,i);
   }
 }
-buildMaxHeap(a); //O(logn)
+buildMaxHeap(a); //O(n) space O(logn)
 console.log('Max heap = ',a); 
