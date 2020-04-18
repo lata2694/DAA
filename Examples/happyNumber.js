@@ -35,5 +35,3 @@ function happyNumber(n) {
   else 
     return false;
 };
-
-console.log(`${happyNumber(1111111)}`);
