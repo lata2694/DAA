@@ -22,7 +22,7 @@ const eg = {
 }
 
 function printObj(obj) {
-  let _obj = {}, el = null;
+  let _obj = {};
 
   for (let key in obj) {
     if (typeof obj[key] === 'function') {
